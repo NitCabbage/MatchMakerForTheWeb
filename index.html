@@ -5,17 +5,17 @@
     <title>Matchmaker for the Web</title>
 </head>
 <style> 
-body {
-  background-image: url('https://cliply.co/wp-content/uploads/2020/01/402001120_PAPER_HEARTS_1080.png');
-}
-</style>
-    
+    body {
+      background-image: url('https://cliply.co/wp-content/uploads/2020/01/402001120_PAPER_HEARTS_1080.png');
+    }
+    </style>
+
 <body>
-   <h1 style="font-size:100px;color:Tomato;">Match Maker for the Web</h1>
-    <p style="color:Tomato;">Instructions: Hello, and welcome to my site! Answer the five questions by using the drop down boxes and selecting the response that you find the most true to you. After you are finsihed answering the prompts, click the "Calculate Score" button andto view your final compatibility score. </p>
+    <h1 style="font-size:100px;color:Tomato;">Match Maker for the Web</h1>
+    <p style="color:Tomato;">Instructions</p>
 
     <label for="Packers are better than the Bears">1. Packers are better than the Bears.</label>
-    <select id="q1">
+    <select id="packer">
       <option value="5">1. Strongly Agree</option>
       <option value="4">2. Agree</option>
       <option value="3">3. Neutral</option>
@@ -25,7 +25,7 @@ body {
     <br /> <br /> <br />
     
     <label for="Revenge of the Sith is the Best Star Wars Movie">2. Revenge of the Sith is the best Star Wars Movie.</label>
-    <select id="q2">
+    <select id="Sith">
       <option value="5">1. Strongly Agree</option>
       <option value="4">2. Agree</option>
       <option value="3">3. Neutral</option>
@@ -35,7 +35,7 @@ body {
     <br /> <br /> <br />
 
     <label for="Yellow is an ugly color">3. Yellow is an ugly color.</label>
-    <select id="q3">
+    <select id="Yellow">
       <option value="5">1. Strongly Agree</option>
       <option value="4">2. Agree</option>
       <option value="3">3. Neutral</option>
@@ -45,7 +45,7 @@ body {
     <br /> <br /> <br />
 
     <label for="Christmas is a better holiday than Halloween">4. Christmas is a better holiday than Halloween.</label>
-    <select id="q4">
+    <select id="Christmas">
       <option value="5">1. Strongly Agree</option>
       <option value="4">2. Agree</option>
       <option value="3">3. Neutral</option>
@@ -55,7 +55,7 @@ body {
     <br /> <br /> <br />
 
     <label for="Salty snacks are better than sweet snacks.">5. Salty Snacks are better than sweet snacks.</label>
-    <select id="q5">
+    <select id="Salty">
       <option value="5">1. Strongly Agree</option>
       <option value="4">2. Agree</option>
       <option value="3">3. Neutral</option>
@@ -73,8 +73,44 @@ console.log("Welcome")
 function calculateScore() {
     console.log("calculateScore()")
 
-document.getElementById("score").innerHTML = "You're score is..."
+const DESIRED_Response = [
+    5,
+    5,
+    1,
+    3,
+    5,
+]
 
+const MAX_SCORE = 15
+
+let question1Response = document.getElementById("packer").selectOptions[0].value
+let question2Response = document.getElementById("Sith").selectOptions[0].value
+let question3Response = document.getElementById("Yellow").selectOptions[0].value
+let question4Response = document.getElementById("Christmas").selectOptions[0].value
+let question5Response = document.getElementById("Salty").selectOptions[0].value
+
+
+let question1Combatibility = 5 - Math.abs(question1Response - DESIRED_Response[0])
+let question2Combatibility = 5 - Math.abs(question2Response - DESIRED_Response[1])
+let question3Combatibility = 5 - Math.abs(question3Response - DESIRED_Response[2])
+let question4Combatibility = 5 - Math.abs(question4Response - DESIRED_Response[3])
+let question5Combatibility = 5 - Math.abs(question5Response - DESIRED_Response[4])
+
+console.log("c1="+question1Combatibility)
+console.log("c2="+question2Combatibility)
+console.log("c3="+question3Combatibility)
+console.log("c4="+question4Combatibility)
+console.log("c5="+question5Combatibility)
+
+
+let totalCombatibility = question1Combatibility + question2Combatibility + question3Combatibility + question4Combatibility + question5Combatibility
+
+
+totalCombatibility *= 100 / MAX_SCORE 
+totalCombatibility = Math.round(totalCombatibility) 
+console.log("tc="+ totalCombatibility)
+
+document.getElementById("score").innerHTML = "You're score is... " +totalCombatibility
 
 } 
 
