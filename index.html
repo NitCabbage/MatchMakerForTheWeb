@@ -2,16 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Matchmaker for the Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Maker</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-</html> 
-
 <body>
+    <div class="header-box">Match Maker</div>
+</body>
+</html>
+/* Set the background image for the entire page */
+body {
     background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/Hearts-Background-HD.jpg');
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    background-position: center; 
+    background-size: cover; /* This makes sure the image covers the entire background */
+    background-repeat: no-repeat; /* This prevents the image from repeating */
+    background-position: center; /* This centers the image on the page */
     margin: 0;
     padding: 0;
+    height: 100vh; /* This makes sure the body takes the full height of the viewport */
 }
-</body> {
+/* Create a text box in the upper middle of the page */
+.header-box {
+    position: absolute;
+    top: 20%; /* Adjust this value to move the box up or down */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 36px; /* Adjust the font size as needed */
+    border-radius: 10px; /* Optional: rounded corners for the box */
+}
