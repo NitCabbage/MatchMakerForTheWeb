@@ -60,12 +60,17 @@
 
     <br /> <br /> <br />
 <button onclick="calculateScore()">Calculate Score</button>
+<p id="score"></p>
 
 <script> 
 console.log("Welcome")
 
 function calculateScore() {
     console.log("calculateScore()")
+
+document.getElementById("score").innerHTML = "You got..."
+
+
 } 
 
 
