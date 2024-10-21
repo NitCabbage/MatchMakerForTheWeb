@@ -81,7 +81,7 @@ const DESIRED_Response = [
     5,
 ]
 
-const MAX_SCORE = 15
+const MAX_SCORE = 25
 
 let question1Response = document.getElementById("packer").selectedOptions[0].value
 let question2Response = document.getElementById("Sith").selectedOptions[0].value
@@ -90,28 +90,28 @@ let question4Response = document.getElementById("Christmas").selectedOptions[0].
 let question5Response = document.getElementById("Salty").selectedOptions[0].value
 
 console.log("Question 1 Answers:")
-console.log(document.getElementByID("packer").selectedOptions[0].text)
-console.log(document.getElementByID("packer").selectedOptions[0].value)
+console.log(document.getElementById("packer").selectedOptions[0].text)
+console.log(document.getElementById("packer").selectedOptions[0].value)
 console.log(question1Response)
 
 console.log("Question 2 Answers:")
-console.log(document.getElementByID("Sith").selectedOptions[0].text)
-console.log(document.getElementByID("Sith").selectedOptions[0].value)
+console.log(document.getElementById("Sith").selectedOptions[0].text)
+console.log(document.getElementById("Sith").selectedOptions[0].value)
 console.log(question2Response)
 
 console.log("Question 3 Answers:")
-console.log(document.getElementByID("Yellow").selectedOptions[0].text)
-console.log(document.getElementByID("Yellow").selectedOptions[0].value)
+console.log(document.getElementById("Yellow").selectedOptions[0].text)
+console.log(document.getElementById("Yellow").selectedOptions[0].value)
 console.log(question3Response)
 
 console.log("Question 4 Answers:")
-console.log(document.getElementByID("Christmas").selectedOptions[0].text)
-console.log(document.getElementByID("Christmas").selectedOptions[0].value)
+console.log(document.getElementById("Christmas").selectedOptions[0].text)
+console.log(document.getElementById("Christmas").selectedOptions[0].value)
 console.log(question4Response)
 
 console.log("Question 5 Answers:")
-console.log(document.getElementByID("Salty").selectedOptions[0].text)
-console.log(document.getElementByID("Salty").selectedOptions[0].value)
+console.log(document.getElementById("Salty").selectedOptions[0].text)
+console.log(document.getElementById("Salty").selectedOptions[0].value)
 console.log(question5Response)
 
 
@@ -139,7 +139,19 @@ console.log("tc="+ totalCombatibility)
 
 document.getElementById("score").innerHTML = "You're score is... " +totalCombatibility
 
+if (totalCombatibility > 90) document.getElementById("score").innerHTML = totalCombatibility + "   Lets wear Packers jerseys and watch Star Wars Baby." 
+if (totalCombatibility < 90) document.getElementById("score").innerHTML = totalCombatibility + "   You seem cool we can get to know each other."
+if (totalCombatibility < 70) document.getElementById("score").innerHTML = totalCombatibility + "   Ehhh idk if I'm feeling you."
+if (totalCombatibility < 40) document.getElementById("score").innerHTML = totalCombatibility + "  What are you doing with yourself?"
+if (totalCombatibility < 30) document.getElementById("score").innerHTML = totalCombatibility + "   Please get away from me before I karate chop you."
+
+
 }  
+
+
+
+
+
 
 
 </script>
