@@ -12,7 +12,7 @@
 
 <body>
     <h1 style="font-size:100px;color:Tomato;">Match Maker for the Web</h1>
-    <p style="color:Tomato;">Instructions change later"</p>
+    <p style="color:Tomato;">Instructions</p>
 
     <label for="Packers are better than the Bears">1. Packers are better than the Bears.</label>
     <select id="packer">
@@ -83,35 +83,35 @@ const DESIRED_Response = [
 
 const MAX_SCORE = 15
 
-let question1Response = document.getElementById('packer').selectOptions[0].value
-let question2Response = document.getElementById('Sith').selectOptions[0].value
-let question3Response = document.getElementById('Yellow').selectOptions[0].value
-let question4Response = document.getElementById('Christmas').selectOptions[0].value
-let question5Response = document.getElementById('Salty').selectOptions[0].value
+let question1Response = document.getElementById('packer').selectedOptions[0].value
+let question2Response = document.getElementById('Sith').selectedOptions[0].value
+let question3Response = document.getElementById('Yellow').selectedOptions[0].value
+let question4Response = document.getElementById('Christmas').selectedOptions[0].value
+let question5Response = document.getElementById('Salty').selectedOptions[0].value
 
 console.log("Question 1 Answers:")
-console.log(document.getElementByID('packer').selectOptions[0].text)
-console.log(document.getElementByID('packer').selectOptions[0].value)
+console.log(document.getElementByID('packer').selectedOptions[0].text)
+console.log(document.getElementByID('packer').selectedOptions[0].value)
 console.log(question1Response)
 
 console.log("Question 2 Answers:")
-console.log(document.getElementByID('Sith').selectOptions[0].text)
-console.log(document.getElementByID('Sith').selectOptions[0].value)
+console.log(document.getElementByID('Sith').selectedOptions[0].text)
+console.log(document.getElementByID('Sith').selectedOptions[0].value)
 console.log(question2Response)
 
 console.log("Question 3 Answers:")
-console.log(document.getElementByID('Yellow').selectOptions[0].text)
-console.log(document.getElementByID('Yellow').selectOptions[0].value)
+console.log(document.getElementByID('Yellow').selectedOptions[0].text)
+console.log(document.getElementByID('Yellow').selectedOptions[0].value)
 console.log(question3Response)
 
 console.log("Question 4 Answers:")
-console.log(document.getElementByID('Christmas').selectOptions[0].text)
-console.log(document.getElementByID('Christmas').selectOptions[0].value)
+console.log(document.getElementByID('Christmas').selectedOptions[0].text)
+console.log(document.getElementByID('Christmas').selectedOptions[0].value)
 console.log(question4Response)
 
 console.log("Question 5 Answers:")
-console.log(document.getElementByID('Salty').selectOptions[0].text)
-console.log(document.getElementByID('Salty').selectOptions[0].value)
+console.log(document.getElementByID('Salty').selectedOptions[0].text)
+console.log(document.getElementByID('Salty').selectedOptions[0].value)
 console.log(question5Response)
 
 
@@ -139,7 +139,7 @@ console.log("tc="+ totalCombatibility)
 
 document.getElementById("score").innerHTML = "You're score is... " +totalCombatibility
 
-} 
+}  
 
 
 </script>
